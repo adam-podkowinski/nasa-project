@@ -13,6 +13,7 @@
     "server": "npm --prefix server run server",
     "client": "npm --prefix client start",
     "watch": "npm run server & npm run client",
+    "deploy": "npm run build --prefix client && npm run server --prefix server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

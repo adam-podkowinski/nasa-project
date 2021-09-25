@@ -13,7 +13,6 @@ const startServer = async () => {
 
   server.listen(PORT, () => {
     console.log(`Listening on http://127.0.0.1:${PORT}`);
-    console.log("siema");
   });
 };
 
