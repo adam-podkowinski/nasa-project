@@ -2,10 +2,18 @@
   "name": "nasa-project",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon server/server.js"
+    "install-server": "npm install --prefix server",
+    "install-client": "npm install --prefix client",
+    "install": "npm run install-server && npm run install-client",
+    "update-server": "npm update --prefix server",
+    "update-client": "npm update --prefix client",
+    "update": "npm run update-server && npm run update-client",
+    "server": "npm --prefix server run server",
+    "client": "npm --prefix client start",
+    "watch": "npm run server & npm run client",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
