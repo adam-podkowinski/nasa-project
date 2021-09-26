@@ -17,5 +17,5 @@ const startServer = async () => {
 };
 
 startServer().catch((e) => {
-  console.log(e);
+  console.log(`Error: ${e}`);
 });
