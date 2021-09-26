@@ -123,3 +123,5 @@ dist
 
 .gitignore
 public/
+
+.flowconfig
