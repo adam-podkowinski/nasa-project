@@ -67,41 +67,48 @@ const Header = (props) => {
   return (
     <ArwesHeader animate>
       <Centered className={classes.root} {...rest}>
-        <img
-          src="/favicon.png"
-          alt=""
-          className={classes.img}
-          style={{
-            margin: "15px 10px 15px 0",
-            height: "50px",
-            width: "auto",
-          }}
-        />
-        <Logo animate size={50} className={classes.logo} layer="header" />
-        <Words animate className={classes.banner}>
-          NASA Mission Control
-        </Words>
         <nav className={`${classes.nav}`}>
+          <Clickable onClick={onNav}>
+            <Link className={classes.link} to="/">
+              <img
+                src={"/favicon.png"}
+                alt=""
+                className={classes.img}
+                style={{
+                  marginRight: "10px",
+                  position: "relative",
+                  top: "15px",
+                  height: "50px",
+                  width: "auto",
+                }}
+              />
+            </Link>
+          </Clickable>
+          <Logo animate size={50} className={classes.logo} layer="header" />
+          <Words animate className={classes.banner}>
+            NASA Mission Control
+          </Words>
           <Clickable className={classes.clickable} onClick={onNav}>
-            <Highlight className={classes.button} animate layer="header">
-              <Link className={classes.link} to="/launch">
-                <i className="material-icons">check_circle_outline</i>Launch
-              </Link>
-            </Highlight>
+            <Link className={classes.link} to="/launch">
+              <Highlight className={classes.button} animate layer="header">
+                <i className="material-icons">check_circle_outline</i>
+                Launch
+              </Highlight>
+            </Link>
           </Clickable>
           <Clickable className={classes.clickable} onClick={onNav}>
-            <Highlight className={classes.button} animate layer="header">
-              <Link className={classes.link} to="/upcoming">
+            <Link className={classes.link} to="/upcoming">
+              <Highlight className={classes.button} animate layer="header">
                 <i className="material-icons">update</i>Upcoming
-              </Link>
-            </Highlight>
+              </Highlight>
+            </Link>
           </Clickable>
           <Clickable className={classes.clickable} onClick={onNav}>
-            <Highlight className={classes.button} animate layer="header">
-              <Link className={classes.link} to="/history">
+            <Link className={classes.link} to="/history">
+              <Highlight className={classes.button} animate layer="header">
                 <i className="material-icons">history</i>History
-              </Link>
-            </Highlight>
+              </Highlight>
+            </Link>
           </Clickable>
         </nav>
       </Centered>

@@ -89,6 +89,9 @@ const AppLayout = (props) => {
                 <Route exact path="/history">
                   <History entered={anim.entered} launches={launches} />
                 </Route>
+                <Route path={"*"}>
+                  <h1>404 - not found</h1>
+                </Route>
               </Switch>
             </div>
           )}

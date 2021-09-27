@@ -22,7 +22,7 @@ const loadPlanetsData = () => {
         if (isHabitablePlanet(data)) habitablePlanets.push(data);
       })
       .on("error", (error) => {
-        console.log(error);
+        console.log(`ERROR: ${error}`);
         reject(error);
       })
       .on("end", () => {
@@ -32,7 +32,11 @@ const loadPlanetsData = () => {
   });
 };
 
+const getAllPlanets = () => {
+  return habitablePlanets;
+};
+
 module.exports = {
   loadPlanetsData,
-  planets: habitablePlanets,
+  getAllPlanets,
 };
