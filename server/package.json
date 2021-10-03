@@ -5,7 +5,9 @@
   "main": "src/server.js",
   "scripts": {
     "test": "jest",
-    "server": "nodemon src/server.js"
+    "test-watch": "jest --watch",
+    "server": "nodemon src/server.js",
+    "cluster": "pm2 start src/server.js -i max"
   },
   "author": "",
   "license": "ISC",
@@ -13,10 +15,12 @@
     "cors": "^2.8.5",
     "csv-parse": "^4.16.3",
     "express": "^4.17.1",
+    "mongoose": "^6.0.8",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
-    "jest": "^27.2.4"
+    "jest": "^27.2.4",
+    "supertest": "^6.1.6"
   }
 }
