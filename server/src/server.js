@@ -1,9 +1,9 @@
-const http = require("http");
+const http = require('http');
 
-const app = require("./app");
+const app = require('./app');
 
-const { mongoConnect } = require("./services/mongo");
-const { loadPlanetsData } = require("./models/planets_model");
+const { mongoConnect } = require('./services/mongo');
+const { loadPlanetsData } = require('./models/planets_model');
 
 const PORT = process.env.PORT || 8000;
 
