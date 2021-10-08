@@ -14,8 +14,8 @@ const launch = {
   success: true,
 };
 
-const existsLaunchWithId = (launchId) => {
-  return launches.has(launchId);
+const existsLaunchWithId = async (launchId) => {
+  return launches.findOne({ flightNumber: launchId });
 };
 
 const getLatestFlightNumber = async () => {
@@ -65,11 +65,13 @@ const scheduleNewLaunch = async (l) => {
   await saveLaunch(newLaunch);
 };
 
-const abortLaunchById = (launchId) => {
-  const aborted = launches.get(launchId);
-  aborted.upcoming = false;
-  aborted.success = false;
+const abortLaunchById = async (launchId) => {
+  const aborted = await launches.updateOne(
+    { flightNumber: launchId },
+    { upcoming: false, success: false }
+  );
   return aborted;
+  // return aborted.ok === 1 && aborted.nModified === 1;
 };
 
 module.exports = {
