@@ -32,6 +32,7 @@ coverage
 
 client/build/
 server/public/
+server/src/mongodb_pass.txt
 
 # Bower dependency directory (https://bower.io/)
 bower_components
