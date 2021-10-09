@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
+const fs = require("fs");
+const path = require("path");
 
-const MONGO_URL =
-  "mongodb+srv://nasa-api:XxswouQ0HjifXI2L@nasacluster.h8lxc.mongodb.net/nasa?retryWrites=true&w=majority";
+const pass = fs.readFileSync(path.join(__dirname, "../mongodb_pass.txt"));
+
+const MONGO_URL = `mongodb+srv://nasa-api:${pass}@nasacluster.h8lxc.mongodb.net/nasa?retryWrites=true&w=majority`;
 
 mongoose.connection.once("open", () => {
   console.log("MongoDB connection ready!");
